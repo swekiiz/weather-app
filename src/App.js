@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import keys from "./keys";
+
+const api = {
+  key: keys.API_KEY,
+  base: keys.BASE_URL,
+};
 
 function App() {
+  const dataBuild = (d) => {
+    let date = String(new window.Date());
+    date = date.slice(3, 15);
+    return date;
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <div className="search_container">
+          <input type="text" placeholder="serach..." className="search_bar" />
+        </div>
+        <div className="location_container">
+          <div className="location">Bangkok, Thailand</div>
+          <div className="date">Nov 27 2020</div>
+        </div>
+        <div className="weather_container">
+          <div className="temperature">30°C</div>
+        </div>
+        <div className="weather">Clouds</div>
+      </main>
     </div>
   );
 }
