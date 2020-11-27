@@ -26,8 +26,8 @@ function App() {
         </div>
         <div className="weather_container">
           <div className="temperature">30°C</div>
+          <div className="weather">Clouds</div>
         </div>
-        <div className="weather">Clouds</div>
       </main>
     </div>
   );
